@@ -1,4 +1,5 @@
 import java.math.BigInteger;
+import java.util.List;
 
 public class Fibonacci {
     static int[][] P = new int[2][2];
@@ -69,6 +70,16 @@ public class Fibonacci {
 
         }
     }
+    public static void printMatV(int[][] m){
+        for (int i=0; i<2;i++){
+            System.out.print("|");
+            for (int j=0; j<1;j++){
+                System.out.print( " " +m[i][j] +" ");
+            }
+            System.out.println("|");
+
+        }
+    }
 
     public static int[][] multMat(int[][] A, int[][] B){
         for(int i=0; i<2;i++){
@@ -83,6 +94,20 @@ public class Fibonacci {
         return P;
     }
 
+    public static int [][] multiplication(int [][] A ,int [][] B){
+        int[][] r = new int[A[0].length][B[1].length];
+        for(int i=0; i<A.length;i++){
+            for (int j=0; j<B[0].length;j++){
+                r[i][j] = 0;
+                for(int k=0;k<B.length;k++){
+                    r[i][j] += A[i][k]*B[k][j];
+                }
+            }
+        }
+        return r;
+    }
+
+
     public static int[][] powMat(int[][] mat, int p){
         int[][] r = new int[mat.length][mat.length];
         for(int i=0; i<mat.length;i++){
@@ -90,27 +115,48 @@ public class Fibonacci {
                 r[i][j] = mat[i][j];
             }
         }
-        for(int i=1; i<p; i++){
-            r = multMat(mat,r);
+        if(p > 1){
+            if(p%2==0 ){
+                r= multMat(r,r);
+
+                r= powMat(r,(p/2));
+            }else{
+                r= multMat(r,powMat(r,(p-1)));
+
+            }
         }
+
         //printMat(r);
         return r;
     }
+
+    public static int fastExp(int p){
+        int[][] res = new int[2][1];
+        int[][] fib = new int[2][1];
+        fib[0][0] = 0;
+        fib[1][0] = 1;
+        int[][] InitMat = {{0,1},
+                {1,1}};
+        res = multiplication(powMat(InitMat,p),fib);
+        return res[0][0];
+
+
+    }
+
+
+
     public static void main(String[] args){
         //Fibonacci fibonacci = new Fibonacci();
-        System.out.println("Fibonnaci version recursive : "+fibonacciRecursive(4));
-        System.out.println("temps : "+timeComplexity(15,"fibonacciRecursive") +" nanosecondes");
+        System.out.println("Fibonnaci version recursive : "+fibonacciRecursive(6));
+        System.out.println("temps : "+timeComplexity(6,"fibonacciRecursive") +" nanosecondes");
         System.out.println("--------------------------------------------------------");
-        System.out.println("Fibonnaci version iterative : "+fibonacciIterative(15));
-        System.out.println("temps : "+timeComplexity(15,"fibonacciIterative") + " nanosecondes");
+        System.out.println("Fibonnaci version iterative : "+fibonacciIterative(6));
+        System.out.println("temps : "+timeComplexity(6,"fibonacciIterative") + " nanosecondes");
         System.out.println("--------------------------------------------------------");
         printMat(fillmat());
         System.out.println();
-        int[][] m = {{1,2},
-                     {2,2}};
-        printMat(multMat(m,m));
-        System.out.println();
-        printMat(powMat(m,2));
+        System.out.println(fastExp(6));
+
 
     }
 
