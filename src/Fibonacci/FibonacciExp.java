@@ -1,54 +1,7 @@
-import java.math.BigInteger;
-import java.util.List;
+package Fibonacci;
 
-public class Fibonacci {
+public class FibonacciExp {
     static int[][] P = new int[2][2];
-
-    public static long timeComplexity(int n, String functionName){
-        System.out.println("pour n = "+n);
-        long time =0;
-        switch (functionName){
-            case "fibonacciIterative":
-                long start = System.nanoTime();
-                fibonacciIterative(n);
-                long end = System.nanoTime();
-                time = end - start;
-
-                break;
-            case "fibonacciRecursive":
-                long s = System.nanoTime();
-                fibonacciRecursive(n);
-                long e = System.nanoTime();
-                time = e - s;
-                break;
-        }
-        return time;
-    }
-
-    public static int fibonacciRecursive(int n){
-        if(n <= 1){
-            return n;
-        }
-
-
-
-        return fibonacciRecursive(n -1 ) + fibonacciRecursive(n-2);
-    }
-
-    public static int fibonacciIterative(int n){
-        int[] fib = new int[n+1];
-        if(n <= 1){
-            return n;
-        }
-        fib[0] = 0;
-        fib[1] = 1;
-
-        for(int i=2; i<n+1; i++){
-            fib[i] =  fib[i-1] + fib[i-2];
-        }
-        return fib[n];
-    }
-
     /* version 03 */
     public static int[][] fillmat(){
         P[0][0] = 0;
@@ -130,7 +83,7 @@ public class Fibonacci {
         return r;
     }
 
-    public static int fastExp(int p){
+    public static int fiboExp(int p){
         int[][] res = new int[2][1];
         int[][] fib = new int[2][1];
         fib[0][0] = 0;
@@ -142,28 +95,5 @@ public class Fibonacci {
 
 
     }
-
-
-
-    public static void main(String[] args){
-        //Fibonacci fibonacci = new Fibonacci();
-        System.out.println("Fibonnaci version recursive : "+fibonacciRecursive(6));
-        System.out.println("temps : "+timeComplexity(6,"fibonacciRecursive") +" nanosecondes");
-        System.out.println("--------------------------------------------------------");
-        System.out.println("Fibonnaci version iterative : "+fibonacciIterative(6));
-        System.out.println("temps : "+timeComplexity(6,"fibonacciIterative") + " nanosecondes");
-        System.out.println("--------------------------------------------------------");
-        printMat(fillmat());
-        System.out.println();
-        System.out.println(fastExp(6));
-
-
-    }
-
-
-
-
-
-
 
 }
