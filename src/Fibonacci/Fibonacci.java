@@ -45,8 +45,6 @@ public class Fibonacci {
         System.out.println();
         System.out.println("Fibonnaci version exponentiation de matrice : "+FibonacciExp.fiboExp(30));
         System.out.println("temps : "+timeComplexity(30,"fibonacciExponentiation") + " nanosecondes");
-
-
     }
 
 

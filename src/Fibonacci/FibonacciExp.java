@@ -10,7 +10,6 @@ public class FibonacciExp {
         P[1][1] = 1;
         //printMat(P);
         return P;
-
     }
 
     public static void printMat(int[][] m){
@@ -88,8 +87,7 @@ public class FibonacciExp {
         int[][] fib = new int[2][1];
         fib[0][0] = 0;
         fib[1][0] = 1;
-        int[][] InitMat = {{0,1},
-                {1,1}};
+        int[][] InitMat = {{0,1}, {1,1}};
         res = multiplication(powMat(InitMat,p),fib);
         return res[0][0];
 
