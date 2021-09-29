@@ -53,7 +53,6 @@ public class Graph<Label> {
     public int getCardinal() {
         return cardinal;
     }
-
     public String toString() {
         String result = new String("");
         result.concat(cardinal + "\n");
@@ -95,20 +94,22 @@ public class Graph<Label> {
      * @return la liste des voisins du sommet {@code v}
      * @throws IllegalArgumentException si le sommet n'est pas valide
      */
-    /*
+
     public ArrayList<Integer> voisins(int v) {
         verifieSommet(v);
         ArrayList<Integer> arrayList =new ArrayList<>();
         List<Edge> listEdge = (incidency.get((Math.abs(v))));
         for (int i =0; i <listEdge.size() ; i++) {
-                if (listEdge.get(i).source==v ){
+            if (listEdge.get(i).source==v){
                     arrayList.add(listEdge.get(i).destination);
                 }
+            if (listEdge.get(i).destination==v){
+                arrayList.add(listEdge.get(i).source);
+            }
         }
         return arrayList;
     }
 
-     */
     /**
      * Renvoie vrai si et seulement si {@code u} et {@code v} sont voisins
      *
