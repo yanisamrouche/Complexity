@@ -2,7 +2,9 @@ package Zone_dense;
 
 public class Main {
     public static void main(String[] args) {
+
         GraphMat graphMat = new GraphMat(5);
+        System.out.println("nanana");
         graphMat.edge(0,1);
         graphMat.edge(0,4);
         graphMat.edge(4,2);
