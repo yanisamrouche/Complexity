@@ -36,39 +36,43 @@ public class GraphMat {
      * Complexité : l'algortihme est en O(n^2), puisque la taille de l'entrée est O((n^2) +n) alors
      * la complexité en taille de l'entreé est O(n^2). Ce qui nous donne une complexité de temps linéaire.
      */
-    public boolean testZoneDense(int[] tableau){
-        if(tableau.length ==1){
-            return true;
-        }
-        for (int i = 0; i <this.size ; i++) {
-            for (int j = i+1; j <this.size ; j++) {
-                if (isIn(i, tableau) && isIn(j, tableau) ){
-                    if (matrix[i][j] ==0)
-                        return false;
+    public boolean testZoneDense(boolean[] tableau){
+        if (tableau.length>=2){
+            for (int i = 0; i <this.size ; i++) {
+                for (int j = i+1; j <this.size ; j++) {
+                    if (isIn(i, tableau) && isIn(j, tableau) ){
+                        if (matrix[i][j] ==0)
+                            return false;
+                    }
                 }
             }
-        }
-        return true;
-    }
-
-    public boolean isIn(int i , int[] tab){
-        for (int j = 0; j <tab.length ; j++) {
-            if(tab[j] == i)
-                return true;
+            return true;
         }
         return false;
+
     }
 
-    public int[] zoneDenseMax(){
-        int[] tableau = new int[size];
+    public boolean isIn(int i , boolean[] tab){
+        return tab[i];
+    }
+
+    /**
+     *
+     * @return un tableu contenant l'ensemble des sommets qui correspond à une zone deinse maximale
+     *
+     */
+
+    public boolean[] zoneDenseMaximal(){
+        boolean[] tableau = new boolean[size];
         for (int i = 0; i <size ; i++) {
-            if(!isIn(i, tableau)){
-                tableau[i] =i;
+            tableau[i] = true;
+            tableau[i+1]= true;
+            if(testZoneDense(tableau)){
+
             }
-            if(!testZoneDense(tableau))
-                tableau[i] =0;
         }
         return tableau;
+
     }
 
     }
