@@ -3,7 +3,6 @@ import GestionAlgo.GestionFichier;
 import org.graphstream.graph.Graph;
 import org.graphstream.graph.Node;
 import org.graphstream.graph.implementations.MultiGraph;
-
 import java.io.IOException;
 import java.util.ArrayList;
 
@@ -55,8 +54,9 @@ public class Graphe {
         graph = new MultiGraph("Tutorial 1");
         graph.setAttribute("ui.quality");
         graph.setAttribute("ui.antialias");
+
         for (int i = 0; i <getNbVertices() ; i++) {
-            graph.addNode(""+i);
+            graph.addNode(""+i).setAttribute("xy", i, i+1);
         }
         for (int i = 0; i < nbVertices; i++) {
             for (int j = i+1; j < nbVertices; j++) {
@@ -65,13 +65,21 @@ public class Graphe {
                 }
             }
         }
-            graph.setAttribute("ui.size", 100);
+        graph.setAttribute("ui.size", 100);
+        graph.setAttribute("ui.style", "padding: 40px");
+
+        graph.nodes().forEach(n -> n.setAttribute("label", n.getId().toLowerCase()));
 
             for (Node node :graph){
+                /*
                 node.setAttribute("ui.style", "fill-mode: plain;");
-                node.setAttribute("ui.label", node.getId());
+                //node.setAttribute("ui.label", node.getId());
+
+                node.setAttribute("ui.style", "" );
                 node.setAttribute("ui.size", 300);
-                node.setAttribute("ui.style", "fill-color: rgb(22, 113, 113);");
+
+                 */
+                node.setAttribute("ui.style", " fill-color: #DEE; size: 25px; stroke-mode: plain; stroke-color: #555;stroke-width:25px;shadow-mode: plain; shadow-width: 15px; shadow-color: #999; shadow-offset: 3px, -3px;text-size:20px;");
 
 
             }
@@ -79,11 +87,11 @@ public class Graphe {
 
             graph.getEdge(k).setAttribute("ui.size", 50);
             graph.getEdge(k).setAttribute("ui.style", "stroke-mode: plain;");
-            graph.getEdge(k).setAttribute("ui.style", "fill-color: rgb(22, 113, 113);");
+            graph.getEdge(k).setAttribute("ui.style", "fill-color: rgb(22, 113, 113);size: 2px;stroke-mode: plain;shape: cubic-curve;");
 
         }
-
-            /*
+        graph.setAttribute("ui.stylesheet", "graph { fill-mode: image-scaled-ratio-max; fill-image: url('/Users/ousmanecisse/Pictures/fanart1.jpg');}");
+        /*
 
             for (int k = 0; k < graph.getEdgeCount(); k++) {
 
@@ -92,10 +100,7 @@ public class Graphe {
                 graph.getEdge(k).setAttribute("ui.style", "fill-color: rgb(22, 113, 113);");
 
             }
-
              */
-
-
         }
 
 
