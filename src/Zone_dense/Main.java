@@ -2,19 +2,22 @@ package Zone_dense;
 
 import org.graphstream.stream.ProxyPipe;
 import org.graphstream.ui.view.Viewer;
+
 import java.io.IOException;
 
 public class Main {
     public static void main(String args[]) throws InterruptedException, IOException {
-
         Graphe graphe = new Graphe("/Users/ousmanecisse/Desktop/COURS_MASTER1/COMPLEXITÉ/TP1_Etude_des_complexites/src/Exemple/matrix0");
         ZoneDense zoneDense =new ZoneDense(graphe);
         Subvertices subvertices = zoneDense.maximalDensityAreaComplete(graphe);
         System.out.println("subevertices " +subvertices.getVertices());
         graphe.paintGraphe();
+
         for (int i = 0; i <subvertices.size() ; i++) {
             for (int j = i+1; j < subvertices.size(); j++) {
-                graphe.getGraph().getEdge(""+subvertices.getVertices().get(i)+""+subvertices.getVertices().get(j)).setAttribute("ui.style", "fill-color: rgb(250, 95, 87);");
+                graphe.getGraph().getNode(""+subvertices.getVertices().get(i)).setAttribute("ui.style", "fill-color: rgb(242, 37, 0); size: 25px; stroke-mode: plain; stroke-color: rgb(242, 37, 0); stroke-width:25px;shadow-mode: plain; shadow-width: 15px; shadow-color: #999; shadow-offset: 3px, -3px;text-size:20px;");
+                graphe.getGraph().getNode(""+subvertices.getVertices().get(subvertices.size()-1)).setAttribute("ui.style", "fill-color: rgb(242, 37, 0); size: 25px; stroke-mode: plain; stroke-color: rgb(242, 37, 0);stroke-width:25px;shadow-mode: plain; shadow-width: 15px; shadow-color: #999; shadow-offset: 3px, -3px;text-size:20px;");
+                graphe.getGraph().getEdge(""+subvertices.getVertices().get(i)+""+subvertices.getVertices().get(j)).setAttribute("ui.style", "fill-color: rgb(242, 37, 0); size: 2px; stroke-mode: plain; stroke-color: rgb(242, 37, 0);shape: cubic-curve;");
             }
         }
         System.setProperty("org.graphstream.ui", "swing");
@@ -89,6 +92,7 @@ public class Main {
 
          */
     }
+
 
 
     }
