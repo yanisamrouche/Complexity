@@ -9,7 +9,7 @@ public class Main {
     public static void main(String args[]) throws InterruptedException, IOException {
         Graphe graphe = new Graphe("/Users/ousmanecisse/Desktop/COURS_MASTER1/COMPLEXITÉ/TP1_Etude_des_complexites/src/Exemple/matrix0");
         ZoneDense zoneDense =new ZoneDense(graphe);
-        Subvertices subvertices = zoneDense.maximalDensityAreaComplete(graphe);
+        Subvertices subvertices = zoneDense.maximalDensityArea(graphe);
         System.out.println("subevertices " +subvertices.getVertices());
         graphe.paintGraphe();
 
