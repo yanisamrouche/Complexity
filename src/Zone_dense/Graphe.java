@@ -62,7 +62,7 @@ public class Graphe {
         for (int i = 0; i < nbVertices; i++) {
             for (int j = i+1; j < nbVertices; j++) {
                 if(isEdge(i,j)){
-                    graph.addEdge(""+i+""+j, ""+i, ""+j);
+                    graph.addEdge(""+i+""+j, ""+i, ""+j,true);
                 }
             }
         }
@@ -81,7 +81,7 @@ public class Graphe {
             graph.getEdge(k).setAttribute("ui.style", "fill-color: rgb(22, 113, 113);size: 2px;stroke-mode: plain;shape: cubic-curve;");
 
         }
-        graph.setAttribute("ui.stylesheet", "graph { fill-mode: image-scaled-ratio-max; fill-image: url('/Users/ousmanecisse/Pictures/fanart1.jpg');}");
+        //graph.setAttribute("ui.stylesheet", "graph { fill-mode: image-scaled-ratio-max; fill-image: url('/Users/ousmanecisse/Pictures/fanart1.jpg');}");
         /*
 
             for (int k = 0; k < graph.getEdgeCount(); k++) {
