@@ -44,6 +44,7 @@ public class Graphe {
         }
         System.out.println();
         System.out.println();
+        System.out.println();
     }
 
     public Graph getGraph() {
@@ -71,17 +72,7 @@ public class Graphe {
         graph.nodes().forEach(n -> n.setAttribute("label", n.getId().toLowerCase()));
 
             for (Node node :graph){
-                /*
-                node.setAttribute("ui.style", "fill-mode: plain;");
-                //node.setAttribute("ui.label", node.getId());
-
-                node.setAttribute("ui.style", "" );
-                node.setAttribute("ui.size", 300);
-
-                 */
                 node.setAttribute("ui.style", " fill-color: #DEE; size: 25px; stroke-mode: plain; stroke-color: #555;stroke-width:25px;shadow-mode: plain; shadow-width: 15px; shadow-color: #999; shadow-offset: 3px, -3px;text-size:20px;");
-
-
             }
         for (int k = 0; k < graph.getEdgeCount(); k++) {
 
