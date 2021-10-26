@@ -24,7 +24,7 @@ public class Chrono {
 
 
     public double getElapsedTime() {
-        return 1e-9 * (double) elapsedTime;
+        return  (double) elapsedTime;
     }
 
     public void restart() {
