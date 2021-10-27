@@ -17,7 +17,8 @@ public class Transition {
 
     }
     public void printTransition(){
-        System.out.println("if : " + symbolRead + " && " + source.getName() + " then write : "+ symbolWrite +" , next state : " + nextState.getName() + ((direction !=0)?(direction>0)? " Move to right" : " Move to left" : " don't Move"));
+        System.out.println("etat : "+ source.getName()  + " symbole lu  (" + symbolRead + ")"+ ",  état suivant  (" + nextState.getName()+ ")," + " on écrit (" + symbolWrite +")"+ ",  " + ((direction !=0)?(direction>0)? " --->" : " <---" : " don't Move")  );
+        //System.out.println("if : " + symbolRead + " && " + source.getName() + " then write : "+ symbolWrite +" , next state : " + nextState.getName() + ((direction !=0)?(direction>0)? " Move to right" : " Move to left" : " don't Move"));
     }
 
     public String getSymbolRead() {
