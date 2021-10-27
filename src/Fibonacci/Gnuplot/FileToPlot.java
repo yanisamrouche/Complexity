@@ -1,9 +1,6 @@
 package Fibonacci.Gnuplot;
 
 import Fibonacci.Fibonacci;
-import Fibonacci.FibonacciExp;
-import Fibonacci.FibonacciIterative;
-import Fibonacci.FibonacciRecursive;
 
 import java.io.FileWriter;
 import java.io.IOException;
@@ -15,21 +12,18 @@ public class FileToPlot {
 
 
 
-    FibonacciRecursive fibonacciRecursive;
-    FibonacciIterative fibonacciIterative;
-    FibonacciExp fibonacciExp;
     static Chrono chrono = new Chrono();
     public static void main(String[] args) throws IOException {
 
-        fileData(50);
+        fileData(10000);
     }
 
     public static void fileData(int n) throws IOException {
-        Writer file = new FileWriter("src/Fibonacci/Gnuplot/data2.dat");
-        for(int i=0; i < n ; i=i+10){
+        Writer file = new FileWriter("src/Fibonacci/Gnuplot/exponentiel.dat");
+        for(int i=0; i < n ; i+=200){
             chrono.start();
              Fibonacci fibonacciRecusrsive = new Fibonacci();
-             fibonacciRecusrsive.recursive(new BigInteger(""+i));
+             fibonacciRecusrsive.matrixExponentiation(new BigInteger(""+i));
              chrono.stop();
             file.write(i+" "+chrono.getElapsedTime()+"\n");
         }

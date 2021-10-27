@@ -27,7 +27,6 @@ public class Fibonacci {
      */
 
     public BigInteger iterative(BigInteger n) {
-
         if (n.compareTo(BigInteger.ONE) <= 0)
             return n;
 

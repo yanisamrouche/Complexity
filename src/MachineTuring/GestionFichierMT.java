@@ -5,7 +5,6 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Arrays;
 
 public class GestionFichierMT {
     private ArrayList<State> states ;
@@ -44,9 +43,17 @@ public class GestionFichierMT {
 
                 }
                 if(nbLignes ==1){
-                    String[] objaProp = (ligne.split(" "));
+                    char[] tab  = ligne.toCharArray();
                     band = new ArrayList<>();
-                    band.addAll(Arrays.asList(objaProp));
+                    if (tab.length ==0){
+                        band.add("B");
+                    }
+                    for (int j = 0; j <tab.length ; j++) {
+                        String charat = String.valueOf(tab[j]);
+                        band.add(charat);
+
+                    }
+
 
                 }
                 if(nbLignes ==2){
