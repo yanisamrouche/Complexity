@@ -25,7 +25,7 @@ public class ZoneDense {
      * Complexité : l'algortihme est en O(n^2), puisque la taille de l'entrée est O((n^2) +n) alors
      * la complexité en taille de l'entreé est O(n^2). Ce qui nous donne une complexité de temps linéaire.
      */
-    public boolean isDenseArea(Graphe graphe, Subvertices  subvertices){
+    public boolean testZoneDense(Graphe graphe, Subvertices  subvertices){
         if (subvertices.size()<2) return false;
         for (int i = 0; i <subvertices.size() ; i++) {
             for (int j = i+1; j <subvertices.size() ; j++) {
@@ -48,7 +48,7 @@ public class ZoneDense {
 
         for (int i = 1; i < graphe.getMatrix().size() ; i++) {
             maximalSubVertices.add(i);
-            if(!(isDenseArea(graphe, maximalSubVertices)))
+            if(!(testZoneDense(graphe, maximalSubVertices)))
                 maximalSubVertices.removeAt(maximalSubVertices.size() - 1);
         }
         return maximalSubVertices;
@@ -56,11 +56,11 @@ public class ZoneDense {
     }
 
     /**
-     * Question 3 Trouver une zone dense mximum (Méthode "complète"))
+     * Question 3 Trouver une zone dense maximum (Méthode "complète"))
      *
      */
 
-    public Subvertices maximalDensityAreaComplete(Graphe graphe){
+    public Subvertices maximumDensityAreaComplete(Graphe graphe){
         Subvertices currentCombination  = new Subvertices() ;
         Queue<Subvertices> combinationsQueue = new LinkedList<>();
         Subvertices firstSubgraph = new Subvertices();
@@ -71,13 +71,13 @@ public class ZoneDense {
         combinationsQueue.add(firstSubgraph);
         if (!combinationsQueue.isEmpty())
             currentCombination = combinationsQueue.poll();
-        if (isDenseArea(graphe,currentCombination))return currentCombination;
+        if (testZoneDense(graphe,currentCombination))return currentCombination;
         addNextCombinationsToExplore(combinationsQueue, currentCombination);
         if(!combinationsQueue.isEmpty())
             currentCombination = combinationsQueue.poll();
 
         while (!combinationsQueue.isEmpty() && currentCombination.size()>1){
-            if(isDenseArea(graphe, currentCombination))
+            if(testZoneDense(graphe, currentCombination))
                 return currentCombination;
 
             addNextCombinationsToExplore(combinationsQueue, currentCombination);
