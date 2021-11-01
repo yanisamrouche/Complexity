@@ -91,7 +91,7 @@ Exemple d’un fichier:
 
 Et le graphe ci-dessous correspond au code de ce fichier .
 
-<img src="https://user-images.githubusercontent.com/55795488/139745012-68874c38-e66d-4bca-873d-d49200632e2d.png" width ="350" height="350">
+<img src="https://user-images.githubusercontent.com/55795488/139745012-68874c38-e66d-4bca-873d-d49200632e2d.png" width ="500" height="350">
 
 
  NB : vous pouvez déplacer les sommets dans l’interface graphique pour plus de visibilité.
@@ -128,6 +128,8 @@ Pour chaque transition il suffit de la noter de la forme suivante :
 et avant de lancer le code veuillez vérifiez que vous n’avez pas mis de ligne vide en plus a la fin du fichier
 
 voici le format du fichier :
+
+<img src="https://user-images.githubusercontent.com/55795488/139745797-ace80aae-e623-478c-89be-f11a24bde6d3.png" width ="613" height="350">
 
 
 voici un exemple testé:
