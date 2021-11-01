@@ -1,5 +1,6 @@
-# Complexity : Mini Projet 1
-commandes d'exécution:
+# Complexity : Projet 1
+## commandes d'exécution:
+
 Pour exécuter le projet il faut se déplacer  jusqu’à la racine du projet(dossier src) et taper la commande suivante  : javac *.java
 
 Pour exécuter une instance  du projet : 
@@ -23,7 +24,7 @@ Exemple:
 // java Main ZoneDense ZoneDenseMaximum chemin_vers_le_fichier
 
 
-# Mini projet 01 : Fibonacci
+## Mini projet 01 : Fibonacci
 
 Pour Fibonacci on a trois méthodes : iterative, recursive, exponentiation (il faut les écrire comme ça dans les commandes pour que ça marche)
 
@@ -41,7 +42,7 @@ java Main Fibonacci exponentiation 50
 
 
 
-# Mini projet 02 : ZoneDense
+## Mini projet 02 : ZoneDense
 
 Pour Zone Dense on a trois méthodes :  testZoneDense, ZoneDenseMaximal,ZoneDenseMaximum
 
@@ -98,7 +99,7 @@ Et le graphe ci-dessous correspond au code de ce fichier .
 	
 
 
-# Mini projet 03 : Machine Turing
+## Mini projet 03 : Machine Turing
 
 Pour Machine de Turing, on a une seule méthode à tester run
 
