@@ -1,5 +1,7 @@
 package Fibonacci.Gnuplot;
 
+import java.io.*;
+
 public class Chrono {
 
     private long lastStartTime;
@@ -35,5 +37,28 @@ public class Chrono {
     public void reset() {
         elapsedTime = 0;
         running = false;
+    }
+
+    public void replace(String name) throws IOException {
+        FileWriter  file  = new FileWriter("src/Fibonacci/Gnuplot/iterative.dat");
+        try (BufferedReader bf = new BufferedReader(new FileReader(name))) {
+            String ligne;
+            int nbLignes = 0;
+            int i =0;
+
+            while ((ligne = bf.readLine()) != null) {
+
+                if(!ligne.contains(",")){
+                    ligne.replace(" ", ",");
+                    file.write(ligne);
+
+                }
+                else file.write(ligne);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        file.close();
+
     }
 }

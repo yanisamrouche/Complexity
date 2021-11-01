@@ -1,5 +1,4 @@
 package Zone_dense;
-import GestionAlgo.GestionFichier;
 import org.graphstream.graph.Graph;
 import org.graphstream.graph.Node;
 import org.graphstream.graph.implementations.MultiGraph;
@@ -10,6 +9,7 @@ public class Graphe {
 
     private Graph graph;
 
+    private ArrayList<Integer> subvertices;
     private int nbVertices;
     private ArrayList<ArrayList<Boolean>> matrix;
 
@@ -24,8 +24,15 @@ public class Graphe {
         }
     }
 
+    public ArrayList<Integer> getSubvertices() {
+        return subvertices;
+    }
+
     public Graphe(String filename) throws IOException {
-        ArrayList<ArrayList<Integer>> arrayLists = new GestionFichier().lireListeObj(filename);
+        GestionFichier gestionFichier = new GestionFichier();
+        ArrayList<ArrayList<Integer>> arrayLists = gestionFichier.lireListeObj(filename);
+        this.subvertices = gestionFichier.getSubvertices();
+        //System.out.println("ccaleee " +subvertices);
         this.nbVertices = new GestionFichier().getSizeGraph();
         this.setMatrix(new Graphe(nbVertices).getMatrix());
         for (int i = 0; i <arrayLists.size() ; i++) {
@@ -124,9 +131,7 @@ public class Graphe {
         }
     }
 
-    public Subvertices getSubVertices(){
-        ArrayList<Integer> subVertices = new ArrayList<>();
-        System.out.println();
-        return  new Subvertices();
+    public ArrayList<Integer> getSubVertices(){
+        return subvertices;
     }
 }

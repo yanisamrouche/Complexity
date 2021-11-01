@@ -3,17 +3,35 @@ package MachineTuring;
 import java.util.ArrayList;
 
 public class MachineTuring {
-
+    /**
+     * une liste de type State qui contient nos états.
+     */
     private ArrayList<State> states = new ArrayList<>();
-
-
+    /**
+     *  String qui va contenir notre symbole blanc.
+     */
     private String blankSymbol;
-
+    /**
+     * une liste de type Transition qui contient les transitions récupérer dans le fichier.
+     */
     private ArrayList<Transition> transitions;
+    /**
+     * une liste de type String  elle va contenir le mot d’entrée l'exécution.
+     */
 
     private ArrayList<String> band = new ArrayList<String>();
 
+    /***
+     * un entier qui représente la tête du ruban.
+     */
     private int headBand;
+
+
+
+    /***
+     * de type State une variable qui nous donne l’état courant.
+     */
+    private State currentState;
 
     //private int numberOfStates;
 
@@ -21,7 +39,7 @@ public class MachineTuring {
         return transitions;
     }
 
-    private State currentState;
+
 
     public MachineTuring(ArrayList<State> states, ArrayList<Transition> transitions, ArrayList<String> band, String blankSymbol) {
         this.states = states;

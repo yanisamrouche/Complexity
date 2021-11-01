@@ -1,4 +1,4 @@
-package GestionAlgo;
+package Zone_dense;
 
 
 import java.io.BufferedReader;
@@ -14,6 +14,10 @@ import java.util.ArrayList;
 public class GestionFichier {
     public static final int PRECISION = 0;
 
+    public ArrayList<Integer> getSubvertices() {
+        return subvertices;
+    }
+
     public int getPoidsMax() {
         return sizeGraph;
     }
@@ -26,6 +30,7 @@ public class GestionFichier {
      *
      */
     private static int sizeGraph;
+    private  ArrayList<Integer> subvertices ;
 
     public int getSizeGraph() {
         return sizeGraph;
@@ -45,15 +50,19 @@ public class GestionFichier {
             while ((ligne = bf.readLine()) != null) {
                 if(nbLignes ==0){
                     sizeGraph = Integer.parseInt(ligne);
-                    nbLignes++;
                 }
-                else{
+                if(nbLignes ==1){
+                    subvertices = new ArrayList<>();
+                    String[] objProp = ligne.split(" ");
+
+                    for (int j = 0; j <objProp.length ; j++) {
+                        subvertices.add( Integer.parseInt(objProp[j]));
+                    }
+
+                }
+                if(nbLignes>=2){
 
                     String[] objProp = ligne.split(" ");
-                    if (objProp.length != 2) {
-                        throw new IOException("Syntaxe invalide lors de la lecture du fichier ligne " + nbLignes
-                                + "\nSyntaxe: Poids ; valeur \nExemple: 2.0 ; 30.0");
-                    }
                     ArrayList<Integer> listEdge = new ArrayList<>();
                     listEdge.add(Integer.parseInt(objProp[0]));listEdge.add(Integer.parseInt(objProp[1]));
                     listsEdge.add(listEdge);
