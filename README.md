@@ -48,7 +48,7 @@ Exemple d’un fichier:
 3 0
 ################################################
 Et le graphe ci-dessous correspond au code de ce fichier .
-<img src="src/img/graphe.png" alt="" >
+<img src="src/img/grpahe.png" alt="" >
 
  NB : vous pouvez déplacer les sommets dans l’interface graphique pour plus de visibilité.
 
