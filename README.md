@@ -140,6 +140,8 @@ la machine du turing (Exo1-TD3) et son fichier .txt correspondant:
 
 q0 = 0, q1 = 1, q2 = 2, qf = 3
 
+<img src="https://user-images.githubusercontent.com/55795488/139745904-862f4b89-8cb4-408e-aa0c-3d4062e45aba.png" width ="647" height="350">
+
 
 
 
