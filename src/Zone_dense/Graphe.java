@@ -3,6 +3,7 @@ package Zone_dense;
 import org.graphstream.graph.Graph;
 import org.graphstream.graph.Node;
 import org.graphstream.graph.implementations.MultiGraph;
+
 import java.io.IOException;
 import java.util.ArrayList;
 
@@ -93,7 +94,8 @@ public class Graphe {
             graph.getEdge(k).setAttribute("ui.style", "fill-color: rgb(22, 113, 113);size: 2px;stroke-mode: plain;");
 
         }
-        }
+
+    }
 
 
 
