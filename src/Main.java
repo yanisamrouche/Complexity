@@ -6,7 +6,6 @@ import Zone_dense.Subvertices;
 import Zone_dense.ZoneDense;
 import org.graphstream.stream.ProxyPipe;
 import org.graphstream.ui.view.Viewer;
-
 import java.io.IOException;
 import java.math.BigInteger;
 
@@ -23,13 +22,13 @@ public class Main {
                     Fibonacci fibonacci = new Fibonacci();
                     switch (methode){
                         case "recursive":
-                            System.out.println(fibonacci.recursive(new BigInteger(input)));
+                            System.out.println("Le résultat de fibonacci recursive pour n= "+ input + " est " +fibonacci.recursive(new BigInteger(input)));
                             break;
                         case "iterative":
-                            System.out.println(fibonacci.iterative(new BigInteger(input)));
+                            System.out.println("Le résultat de fibonacci iterative pour n= "+ input + " est " +fibonacci.iterative(new BigInteger(input)));
                             break;
                         case "exponentiation":
-                            System.out.println(fibonacci.matrixExponentiation(new BigInteger(input)));
+                            System.out.println("Le résultat de fibonacci exponetntiation pour n= "+ input + " est " +fibonacci.matrixExponentiation(new BigInteger(input)));
                             break;
                     }
                     break;
@@ -52,6 +51,7 @@ public class Main {
                                     graphe.getGraph().getEdge(""+subvertices.getVertices().get(i)+""+subvertices.getVertices().get(j)).setAttribute("ui.style", "fill-color: rgb(242, 37, 0); size: 2px; stroke-mode: plain; stroke-color: rgb(242, 37, 0);");
                                 }
                             }
+
                             System.setProperty("org.graphstream.ui", "swing");
                             Viewer viewer = graphe.getGraph().display();
 
@@ -63,8 +63,6 @@ public class Main {
                                 pipe.pump();
 
                             }
-
-
 
                         case "ZoneDenseMaximum":
                             Subvertices subverticesMaximum = zoneDense.maximumDensityAreaComplete(graphe);
@@ -82,6 +80,7 @@ public class Main {
 
                             ProxyPipe pipe1 = viewer1.newViewerPipe();
                             pipe1.addAttributeSink(graphe.getGraph());
+
                             while (true) {
                                 Thread.sleep(100);
 
@@ -89,10 +88,10 @@ public class Main {
 
                             }
 
+
                     }
                     break;
             }
-
         }
         if (args.length == 2){
             String  mini_projet = args[0];

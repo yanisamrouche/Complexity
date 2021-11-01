@@ -1,4 +1,5 @@
 package Zone_dense;
+
 import org.graphstream.graph.Graph;
 import org.graphstream.graph.Node;
 import org.graphstream.graph.implementations.MultiGraph;
@@ -54,6 +55,10 @@ public class Graphe {
         System.out.println();
     }
 
+    public Graphe() {
+        this.graph = graph;
+    }
+
     public Graph getGraph() {
         return graph;
     }
@@ -88,17 +93,6 @@ public class Graphe {
             graph.getEdge(k).setAttribute("ui.style", "fill-color: rgb(22, 113, 113);size: 2px;stroke-mode: plain;");
 
         }
-        //graph.setAttribute("ui.stylesheet", "graph { fill-mode: image-scaled-ratio-max; fill-image: url('/Users/ousmanecisse/Pictures/fanart1.jpg');}");
-        /*
-
-            for (int k = 0; k < graph.getEdgeCount(); k++) {
-
-                graph.getEdge(k).setAttribute("ui.size", 50);
-                graph.getEdge(k).setAttribute("ui.style", "stroke-mode: plain;");
-                graph.getEdge(k).setAttribute("ui.style", "fill-color: rgb(22, 113, 113);");
-
-            }
-             */
         }
 
 
