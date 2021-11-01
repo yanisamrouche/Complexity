@@ -13,7 +13,7 @@ Exemple:
 // java Main MachineTuring run  chemin_vers_le_fichier
 // java Main ZoneDense ZoneDenseMaximum chemin_vers_le_fichier
 
-# Mini projet 01 : Fibonacci
+Mini projet 01 : Fibonacci
 Pour Fibonacci on a trois méthodes : iterative, recursive, exponentiation (il faut les écrire comme ça dans les commandes pour que ça marche)
 Exemple pour exécuter Fibonnacci pour exponentiation avec n =50 : 
 java Main Fibonacci exponentiation 50
@@ -23,7 +23,7 @@ Exemple pour exécuter Fibonnacci pour exponentiation avec n =50 :
 java Main Fibonacci exponentiation 50
 
 
-# Mini projet 02 : ZoneDense
+Mini projet 02 : ZoneDense
 Pour Zone Dense on a trois méthodes :  testZoneDense, ZoneDenseMaximal,ZoneDenseMaximum
 Exemple :
 1) pour lancer la commande de testZoneDense : 
@@ -48,12 +48,11 @@ Exemple d’un fichier:
 3 0
 ################################################
 Et le graphe ci-dessous correspond au code de ce fichier .
-<img src="src/img/grpahe.png" alt="" >
 
  NB : vous pouvez déplacer les sommets dans l’interface graphique pour plus de visibilité.
 
 
-# Mini projet 03 : Machine Turing
+Mini projet 03 : Machine Turing
 Pour Machine de Turing, on a une seule méthode à tester run
 La commande à lancer pour tester cette méthode est :
 java Main MachineTuring run chemin_vers_le_fichier
@@ -75,5 +74,7 @@ voici un exemple testé:
 la machine du turing (Exo1-TD3) et son fichier .txt correspondant:
 (sans l’état Qnon et les transitions vers Qnon)
 q0 = 0, q1 = 1, q2 = 2, qf = 3
+
+
 
 
