@@ -90,7 +90,8 @@ Exemple d’un fichier:
 ################################################
 
 Et le graphe ci-dessous correspond au code de ce fichier .
-![graphe](https://user-images.githubusercontent.com/55795488/139745012-68874c38-e66d-4bca-873d-d49200632e2d.png)
+
+<img src="https://user-images.githubusercontent.com/55795488/139745012-68874c38-e66d-4bca-873d-d49200632e2d.png" width ="350" height="350">
 
 
  NB : vous pouvez déplacer les sommets dans l’interface graphique pour plus de visibilité.
