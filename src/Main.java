@@ -36,7 +36,7 @@ public class Main {
                     Graphe graphe = new Graphe(input);
                     ZoneDense zoneDense = new ZoneDense(graphe);
                     switch (methode){
-                        case "testZoneDense":
+                        case "TestZoneDense":
                             System.out.println("Tu test les sommets suivants "+ graphe.getSubVertices() );
                             System.out.println(((zoneDense.testZoneDense(graphe, new Subvertices(graphe.getSubvertices())))? "le sous ensemble de sommets : " +graphe.getSubVertices() + " est une Zone Dense " :  "le sous ensemble de sommets : " +graphe.getSubVertices() + " n'est pas une Zone Dense "  ) );
                             break;
@@ -45,7 +45,7 @@ public class Main {
                             System.out.println("le sous ensemble de sommet suivant contitue une Zone Dense Maximal : " + subvertices.printSubGraph());
                             graphe.paintGraphe();
 
-                            for (int i = 0; i <subvertices.size() ; i++) {
+                            for (int i = 0; i < subvertices.size() ; i++) {
                                 graphe.getGraph().getNode(""+subvertices.getVertices().get(i)).setAttribute("ui.style", "fill-color: rgb(242, 37, 0); size: 25px; stroke-mode: plain; stroke-color: rgb(242, 37, 0); stroke-width:25px;shadow-mode: plain; shadow-width: 15px; shadow-color: #999; shadow-offset: 3px, -3px;text-size:20px;");
                                 for (int j = i+1; j < subvertices.size(); j++) {
                                     graphe.getGraph().getEdge(""+subvertices.getVertices().get(i)+""+subvertices.getVertices().get(j)).setAttribute("ui.style", "fill-color: rgb(242, 37, 0); size: 2px; stroke-mode: plain; stroke-color: rgb(242, 37, 0);");
