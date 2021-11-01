@@ -17,6 +17,7 @@ public class Main {
         System.out.println("le sous ensemble de sommet suivant contitue une Zone Dense maximum : " + subverticesMaximum.printSubGraph());
         graphe.paintGraphe();
 
+
         for (int i = 0; i <subverticesMaximum.size() ; i++) {
             graphe.getGraph().getNode(""+subverticesMaximum.getVertices().get(i)).setAttribute("ui.style", "fill-color: rgb(242, 37, 0); size: 25px; stroke-mode: plain; stroke-color: rgb(242, 37, 0); stroke-width:25px;shadow-mode: plain; shadow-width: 15px; shadow-color: #999; shadow-offset: 3px, -3px;text-size:20px;");
             for (int j = i+1; j < subverticesMaximum.size(); j++) {
@@ -28,6 +29,7 @@ public class Main {
 
         ProxyPipe pipe1 = viewer1.newViewerPipe();
         pipe1.addAttributeSink(graphe.getGraph());
+
         while (true) {
             Thread.sleep(100);
 
